@@ -22,5 +22,5 @@ public class Subject {
     private Long id;
     private String name;
 
-    Set<Student> enrolledStudents = new HashSet<>();
+    private Set<Student> enrolledStudents = new HashSet<>();
 }
