@@ -1,7 +1,6 @@
 package school.service;
 
 import school.dto.SubjectDto;
-import school.model.Subject;
 
 import java.util.List;
 import java.util.Optional;
