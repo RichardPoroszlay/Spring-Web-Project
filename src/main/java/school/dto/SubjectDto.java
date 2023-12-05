@@ -15,5 +15,5 @@ import java.util.Set;
 public class SubjectDto {
     private Long id;
     private String name;
-    private Set<StudentDto> enrolledStudents = new HashSet<>();
+    //private Set<StudentDto> enrolledStudents = new HashSet<>();
 }

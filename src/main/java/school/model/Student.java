@@ -20,7 +20,7 @@ public class Student {
     private Long id;
     private String name;
 
-    @JsonIgnore // to avoid recursive problem
-    @ManyToMany(mappedBy = "enrolledStudents")
-    private Set<Subject> subjects = new HashSet<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "subject_id")
+    private Subject subject;
 }

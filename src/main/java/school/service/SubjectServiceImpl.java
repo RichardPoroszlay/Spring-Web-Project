@@ -49,13 +49,13 @@ public class SubjectServiceImpl implements SubjectService {
     }
 
     @Override
-    public boolean editSubject(Long id, Subject editedSubject) {
+    public boolean editSubject(Long id, SubjectDto editedSubject) {
         Optional<Subject> optionalSubject = subjectRepository.findById(id);
 
         if(optionalSubject.isPresent()) {
             Subject existingSubject = optionalSubject.get();
             existingSubject.setName(editedSubject.getName());
-            existingSubject.setEnrolledStudents(editedSubject.getEnrolledStudents());
+            // existingSubject.setEnrolledStudents(editedSubject.getEnrolledStudents());
 
             subjectRepository.save(existingSubject);
             return true;

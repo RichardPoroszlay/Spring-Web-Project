@@ -18,12 +18,9 @@ public class SubjectController {
 
     private final SubjectService subjectService;
 
-    private final StudentService studentService;
-
     @Autowired
     public SubjectController(SubjectService subjectService, StudentService studentService) {
         this.subjectService = subjectService;
-        this.studentService = studentService;
     }
 
     @PostMapping("/add-subject")
@@ -46,8 +43,8 @@ public class SubjectController {
     }
 
     @PutMapping("/edit-subject/{id}")
-    public ResponseEntity<String> editSubject(@PathVariable Long id, @RequestBody Subject editedSubject) {
-        if(subjectService.editSubject(id, editedSubject)) {
+    public ResponseEntity<String> editSubject(@PathVariable Long id, @RequestBody SubjectDto editedSubjectDto) {
+        if(subjectService.editSubject(id, editedSubjectDto)) {
             return ResponseEntity.ok("Subject edited with the id: " + id);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("There is no subject with id: " + id);

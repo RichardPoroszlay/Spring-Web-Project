@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import school.model.Subject;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,5 +16,5 @@ import java.util.Set;
 public class StudentDto {
     private Long id;
     private String name;
-    private Set<SubjectDto> subjects = new HashSet<>();
+    private SubjectDto subject;
 }

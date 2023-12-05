@@ -13,7 +13,7 @@ public interface SubjectService {
 
     boolean deleteSubject(Long id);
 
-    boolean editSubject(Long id, Subject editedSubject);
+    boolean editSubject(Long id, SubjectDto editedSubject);
 
     Optional<SubjectDto> getSubjectById(Long id);
 }

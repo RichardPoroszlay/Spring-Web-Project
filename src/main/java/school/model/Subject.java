@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,11 +21,6 @@ public class Subject {
     private Long id;
     private String name;
 
-    @ManyToMany
-    @JoinTable(
-            name = "student_enrolled",
-            joinColumns = @JoinColumn(name = "subject_id"),
-            inverseJoinColumns = @JoinColumn(name = "student_id")
-    )
-    private Set<Student> enrolledStudents = new HashSet<>();
+    @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Student> enrolledStudents = new ArrayList<>();
 }

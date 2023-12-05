@@ -55,7 +55,7 @@ public class StudentServiceImpl implements StudentService {
         if(optionalStudent.isPresent()) {
             Student existingStudent = optionalStudent.get();
             existingStudent.setName(editedStudent.getName());
-            existingStudent.setSubjects(editedStudent.getSubjects());
+            existingStudent.setSubject(editedStudent.getSubject());
 
             studentRepository.save(existingStudent);
             return true;
