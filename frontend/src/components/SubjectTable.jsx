@@ -24,23 +24,22 @@ function SubjectTable() {
   };
 
   if (isPending) return "Loading...";
-
   if (error) return "An error has occurred: " + error.message;
+
   return (
     <div className="m-3">
-      <h2 className="text-4xl font-extrabold dark:text-white my-5">
-        Subject CRUD Site
+      <h2 className="text-4xl font-extrabold text-[#0cc] my-5">
+        Subject Management Page
       </h2>
-      <p className="mb-4 text-lg font-normal text-gray-500 dark:text-gray-400">
-        Explore, add, modify, or delete subject entries effortlessly. Make your
-        changes and see them in action in real-time!
+      <p className="mb-4 text-lg font-normal text-black">
+        Manage the subjects here!
       </p>
 
       <div className="flex justify-end h-full">
         <NavLink to="/add-subject">
           <button
             type="button"
-            className="mx-32 focus:outline-none text-white bg-green-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 my-5 dark:focus:ring-yellow-900"
+            className="mx-32 focus:outline-none text-white font-bold bg-[#0cc] hover:bg-[#00ffb9] rounded-lg text-sm px-5 py-2.5 my-5"
           >
             Add new Subject
           </button>
@@ -67,7 +66,7 @@ function SubjectTable() {
                 <Table.Cell className="w-1/4">
                   <button
                     type="button"
-                    className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                    className="focus:outline-none text-white font-bold bg-[#5c0404] hover:bg-red-800 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
                     onClick={() => handleDelete(subject.id)}
                   >
                     Delete
@@ -75,7 +74,7 @@ function SubjectTable() {
                   <Link to={`/edit-subject/${subject.id}`}>
                     <button
                       type="button"
-                      className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
+                      className="focus:outline-none text-white font-bold bg-[#019191] hover:bg-[#0cc] rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
                     >
                       Edit
                     </button>
@@ -83,7 +82,7 @@ function SubjectTable() {
                   <Link to={`/subject/${subject.id}`}>
                     <button
                       type="button"
-                      className="focus:outline-none text-white bg-blue-400 hover:bg-blue-500 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
+                      className="focus:outline-none text-white font-bold bg-[#019191] hover:bg-[#0cc] rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
                     >
                       Preview
                     </button>

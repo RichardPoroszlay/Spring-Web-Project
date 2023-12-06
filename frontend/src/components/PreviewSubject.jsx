@@ -22,14 +22,14 @@ function PreviewSubject() {
   return (
     <div className="h-screen w-full grid place-items-center">
       <Card className=" w-1/5">
-        <p className="text-xl">Name:</p>
+        <p className="text-xl">Subject name:</p>
         <span className="text-center">{subject.name}</span>
         <hr class="h-px my-1 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
         <div className="grid justify-center">
-          <Link to={"/subjects"}>
+          <Link to={"/get-subjects"}>
             <button
-              className="focus:outline-none text-white bg-[#ff7400] hover:bg-[#ffa700] active:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+              className="focus:outline-none text-white font-bold bg-[#019191] hover:bg-[#0cc] rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
               type="submit"
             >
               Back to Subjects

@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 function AddStudent() {
   const { isPending, isError, data, error } = useQuery({
     queryKey: ["subjectsData"],
-    queryFn: fetchStudents,
+    queryFn: fetchSubjects,
   });
 
   const createStudentMutation = useMutation({
@@ -95,14 +95,14 @@ function AddStudent() {
             />
             <div className="grid justify-center">
               <button
-                className="focus:outline-none text-white bg-green-700 hover:bg-green-800 active:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                className="focus:outline-none text-white font-bold bg-[#0cc] hover:bg-[#00ffb9] rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
                 type="submit"
               >
                 Add Student
               </button>
-              <Link to={"/students"}>
+              <Link to={"/get-students"}>
                 <button
-                  className="focus:outline-none text-white bg-[#ff7400] hover:bg-[#ffa700] active:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+                  className="focus:outline-none text-white font-bold bg-[#019191] hover:bg-[#0cc] rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
                   type="submit"
                 >
                   Back to Students

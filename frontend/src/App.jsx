@@ -11,7 +11,7 @@ import {
   EditSubject,
   PreviewSubject,
 } from "./components";
-import PreviewFruit from "./components/PreviewStudent";
+import PreviewStudent from "./components/PreviewStudent";
 
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
       <DefaultNavbar></DefaultNavbar>
       <Routes>
         <Route path="" element={<Hero />} />
-        <Route path="/students" element={<StudentTable />} />
-        <Route path="/subjects" element={<SubjectTable />} />
+        <Route path="/get-students" element={<StudentTable />} />
+        <Route path="/get-subjects" element={<SubjectTable />} />
         <Route path="/add-student" element={<AddStudent />} />
         <Route path="/edit-student/:id" element={<EditStudent />} />
         <Route path="/add-subject" element={<AddSubject />} />

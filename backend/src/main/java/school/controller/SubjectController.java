@@ -11,8 +11,9 @@ import school.service.SubjectService;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/subjects")
+//@RequestMapping("/subjects")
 public class SubjectController {
 
     private final SubjectService subjectService;

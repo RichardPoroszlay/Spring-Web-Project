@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { fetchStudent, updateStudent } from "../api/students";
+import { fetchStudents, updateStudent } from "../api/students";
 import { fetchSubjects } from "../api/subjects";
 import { Link } from "react-router-dom";
 
@@ -21,7 +21,7 @@ const EditStudent = () => {
     error: studentError,
   } = useQuery({
     queryKey: ["student"],
-    queryFn: () => fetchStudent(params.id),
+    queryFn: () => fetchStudents(params.id),
   });
 
   const {
@@ -33,6 +33,7 @@ const EditStudent = () => {
     queryKey: ["subjectsData"],
     queryFn: fetchSubjects
   });
+
 
   if (isLoadingStudent) return "Loading...";
   if (isErrorStudent) return "An error has occurred: " + studentError.message;
@@ -47,7 +48,7 @@ const EditStudent = () => {
         enableReinitialize
         initialValues={{
           name: student.name,
-          subject: student.subject.id,
+          subject: student.subject,
         }}
         validationSchema={Yup.object({
           name: Yup.string().required("Name is required"),
@@ -117,14 +118,14 @@ const EditStudent = () => {
 
             <div className="grid justify-center">
               <button
-                className="focus:outline-none text-white bg-green-700 hover:bg-green-800 active:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                className="focus:outline-none text-white font-bold bg-[#0cc] hover:bg-[#00ffb9] rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
                 type="submit"
               >
                 Edit Student
               </button>
-              <Link to={"/students"}>
+              <Link to={"/get-students"}>
                 <button
-                  className="focus:outline-none text-white bg-[#ff7400] hover:bg-[#ffa700] active:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+                  className="focus:outline-none text-white font-bold bg-[#019191] hover:bg-[#0cc] rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
                   type="submit"
                 >
                   Back to Students
