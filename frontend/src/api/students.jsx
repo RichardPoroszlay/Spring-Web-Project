@@ -34,6 +34,6 @@ export async function updateStudent(id, updatedStudent) {
 }
 
 export async function fetchStudent(id) {
-  const response = await fetch(`http://localhost:8080/students/student/${id}`);
+  const response = await fetch(`http://localhost:8080/student/${id}`);
   return response.json();
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { fetchStudents } from "../api/students";
+import { fetchStudent } from "../api/students";
 import { Card } from "flowbite-react";
 
 function PreviewStudent() {
@@ -13,7 +13,7 @@ function PreviewStudent() {
     error: studentError,
   } = useQuery({
     queryKey: ["student"],
-    queryFn: () => fetchStudents(params.id)
+    queryFn: () => fetchStudent(params.id)
   });
 
   console.log(student);
@@ -24,11 +24,11 @@ function PreviewStudent() {
     <div className="h-screen w-full grid place-items-center">
       <Card className=" w-1/5">
         <p className="text-xl">Student name:</p>
-        <span className="text-center">{student[0].name}</span>
+        <span className="text-center">{student.name}</span>
         <hr class="h-px my-1 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
         <p className="text-xl">Subject:</p>
-        <span className="text-center">{student[0].subject.name}</span>
+        <span className="text-center">{student.subject.name}</span>
         <hr class="h-px my-1 bg-gray-200 border-0 dark:bg-gray-700"></hr>
 
         <div className="grid justify-center">
